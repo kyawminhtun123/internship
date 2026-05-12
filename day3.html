@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Utility Simulator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    body {
+  background: #f1f5f9;
+  padding: 30px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 34px;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.navbar {
+  background: #0f172a;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 50px;
+  font-size: 14px;
+}
+
+.features {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.feature-box {
+  flex: 1;
+  background: #dbeafe;
+  text-align: center;
+  padding: 25px;
+  color: #475569;
+  border-radius: 4px;
+}
+
+.main-grid {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.panel {
+  flex: 1;
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.panel h2 {
+  margin-bottom: 18px;
+  font-size: 22px;
+  color: #111827;
+}
+
+.control-group {
+  margin-bottom: 16px;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #475569;
+}
+
+.control-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+}
+
+.preview-area {
+  flex: 1;
+  background: #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.card {
+  background: #2563eb;
+  color: white;
+  padding: 25px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  line-height: 1.5;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .features,
+  .main-grid {
+    flex-direction: column;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CSS Utility Simulator</h1>
+    <p class="subtitle">Change the inputs below to see how atomic classes combine to build UIs.</p>
+  
+  <div class="navbar">
+    <h2>MyLogo</h2>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature-box">Feature 1</div>
+    <div class="feature-box">Feature 2</div>
+    <div class="feature-box">Feature 3</div>
+  </div>
+
+  <div class="main-grid">
+    <div class="panel">
+      <h2>Utility Controls</h2>
+
+      <div class="control-group">
+        <label>Padding (Spacing)</label>
+        <select><option>Medium (p-8)</option></select>
+      </div>
+
+      <div class="control-group">
+        <label>Background Theme (Colors)</label>
+        <select><option>Primary Blue</option></select>
+      </div>
+
+      <div class="control-group">
+        <label>Text Size (Typography)</label>
+        <select><option>Large (text-xl)</option></select>
+      </div>
+
+      <div class="control-group">
+        <label>Corner Radius (Borders)</label>
+        <select><option>Square (rounded-none)</option></select>
+      </div>
+
+      <div class="control-group">
+        <label>Shadow (Depth)</label>
+        <select><option>Medium (shadow-md)</option></select>
+      </div>
+    </div>
+
+    <div class="preview-area">
+      <div class="card">
+        <h3>Alex Walker</h3>
+        <p>Full-Stack Web Developer building awesome things with Tailwind CSS.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="btn">Submit</button>
+    <button class="btn">Hover Me Slowly!</button>
+  </div>
+
+  </div>
+</body>
+</html>

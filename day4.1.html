@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mini Calculator</title>
+
+    <style>
+      * {
+      }
+      body {
+        background: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: sans-serif;
+      }
+
+      .box {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        width: 300px;
+        text-align: center;
+      }
+
+      input,
+      select {
+        padding: 10px;
+        width: 80px;
+        margin: 5px;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+
+      .result {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 15px;
+        text-align: left;
+      }
+
+      .result span {
+        float: right;
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <h2>Mini Calculator</h2>
+
+      <input type="number" id="num1" />
+
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+
+      <input type="number" id="num2" />
+
+      <button onclick="calculate()">Calculate Amount</button>
+
+      <div class="result">
+        Result:
+        <span id="answer">0</span>
+      </div>
+    </div>
+
+    <script>
+      function calculate() {
+        let num1 = Number(document.getElementById("num1").value);
+        let num2 = Number(document.getElementById("num2").value);
+        let operator = document.getElementById("operator").value;
+
+        let result = 0;
+
+        if (operator == "+") {
+          result = num1 + num2;
+        } else if (operator == "-") {
+          result = num1 - num2;
+        } else if (operator == "*") {
+          result = num1 * num2;
+        } else if (operator== "/") {
+
+          result = num1 / num2;
+        }
+
+        document.getElementById("answer").innerText = result;
+      }
+    </script>
+  </body>
+</html>
