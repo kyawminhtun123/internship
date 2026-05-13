@@ -129,51 +129,51 @@
   </div>
 
   <script>
-    let display = document.getElementById("display");
+  let display = document.getElementById("display");
 
-    function add(value) {
-      let last = display.value.slice(-1);
+  function add(value) {
+    let last = display.value.slice(-1);
 
-      if (
-        (last == "+"  last == "-"  last == "*"  last == "/") &&
-        (value == "+"  value == "-"  value == "*"  value == "/")
-      ) {
-        return;
-      }
-
-      display.value += value;
+    if (
+      (last == "+" || last == "-" || last == "*" || last == "/") &&
+      (value == "+" || value == "-" || value == "*" || value == "/")
+    ) {
+      return;
     }
 
-    function clearDisplay() {
+    display.value += value;
+  }
+
+  function clearDisplay() {
+    display.value = "";
+  }
+
+  function del() {
+    display.value = display.value.slice(0, -1);
+  }
+
+  function dot() {
+    let lastNumber = display.value.split(/[\+\-\*\/]/).pop();
+
+    if (!lastNumber.includes(".")) {
+      display.value += ".";
+    }
+  }
+
+  function percent() {
+    if (display.value != "") {
+      display.value = eval(display.value) / 100;
+    }
+  }
+
+  function answer() {
+    if (display.value == "") {
       display.value = "";
+    } else if (eval(display.value) == Infinity) {
+      display.value = "Error";
+    } else {
+      display.value = eval(display.value);
     }
-<
-    function del() {
-      display.value = display.value.slice(0, -1);
-    }
-
-    function dot() {
-      let lastNumber = display.value.split(/[\+\-\*\/]/).pop();
-
-      if (!lastNumber.includes(".")) {
-        display.value += ".";
-      }
-    }
-
-    function percent() {
-      if (display.value != "") {
-        display.value = eval(display.value) / 100;
-      }
-    }
-
-    function answer() {
-      if (display.value == "") {
-        display.value = "";
-      } else if (eval(display.value) == Infinity) {
-        display.value = "Error";
-      } else {
-        display.value = eval(display.value);
-      }
-    }
-  </script>
+  }
+</script>
 </body>
